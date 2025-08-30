@@ -45,7 +45,6 @@ export function createRemoteImageUrlsPlugin(baseUrl: string, components?: Array<
 	return [withRemoteImageUrls, { baseUrl, components }] satisfies Pluggable;
 }
 
-// FIXME: patch `rehype-mermaid` because of missing `import.meta.resolve` in next.js
 export function createMermaidDiagramsPlugin() {
 	return [
 		withMermaidDiagrams,
