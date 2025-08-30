@@ -28,9 +28,6 @@ const config: Config = {
 
 		return Promise.resolve(headers);
 	},
-	outputFileTracingIncludes: {
-		"**/*": ["**/node_modules/mermaid-isomorphic/dist/*"],
-	},
 	output: env.BUILD_MODE,
 	redirects() {
 		const redirects: Awaited<ReturnType<NonNullable<Config["redirects"]>>> = [
