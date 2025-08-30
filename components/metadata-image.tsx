@@ -14,7 +14,7 @@ interface MetadataImageProps {
 export async function MetadataImage(props: Readonly<MetadataImageProps>): Promise<ImageResponse> {
 	const { locale, size, title } = props;
 
-	const fontPath = join(process.cwd(), "public", "assets", "fonts", "roboto-semibold.ttf");
+	const fontPath = join(process.cwd(), "lib", "assets", "fonts", "roboto-semibold.ttf");
 	const font = await readFile(fontPath);
 
 	return new ImageResponse(

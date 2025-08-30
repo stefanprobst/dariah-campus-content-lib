@@ -39,7 +39,7 @@ export async function getPreviewMode(): Promise<PreviewMode> {
 			}
 		}
 
-		// draft.disable();
+		draft.disable();
 	}
 
 	return {
