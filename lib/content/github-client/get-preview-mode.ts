@@ -39,8 +39,7 @@ export async function getPreviewMode(): Promise<PreviewMode> {
 			}
 		}
 
-		// FIXME: can only be called in route handler
-		draft.disable();
+		// draft.disable();
 	}
 
 	return {
