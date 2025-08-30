@@ -1,10 +1,9 @@
-import { createUrl } from "@acdh-oeaw/lib";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+
 import { ImageResponse } from "next/og";
 
-import { env } from "@/config/env.config";
 import type { IntlLocale } from "@/lib/i18n/locales";
-
-let font: ArrayBuffer | null = null;
 
 interface MetadataImageProps {
 	locale: IntlLocale;
@@ -15,15 +14,9 @@ interface MetadataImageProps {
 export async function MetadataImage(props: Readonly<MetadataImageProps>): Promise<ImageResponse> {
 	const { locale, size, title } = props;
 
-	// eslint-disable-next-line require-atomic-updates
-	font ??= await fetch(
-		createUrl({
-			baseUrl: env.NEXT_PUBLIC_APP_BASE_URL,
-			pathname: "/assets/fonts/roboto-semibold.ttf",
-		}),
-	).then((response) => {
-		return response.arrayBuffer();
-	});
+	const font = await readFile(
+		join(process.cwd(), "public", "assets", "fonts", "roboto-semibold.ttf"),
+	);
 
 	return new ImageResponse(
 		(
@@ -61,7 +54,7 @@ export async function MetadataImage(props: Readonly<MetadataImageProps>): Promis
 			...size,
 			fonts: [
 				{
-					data: font!,
+					data: font,
 					name: "Roboto",
 					style: "normal",
 					weight: 600,
