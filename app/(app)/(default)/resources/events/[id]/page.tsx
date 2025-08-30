@@ -29,6 +29,8 @@ import { getMetadata } from "@/lib/i18n/metadata";
 import { createFullUrl } from "@/lib/navigation/create-full-url";
 import { pickRandom } from "@/lib/utils/pick-random";
 
+export const dynamicParams = false;
+
 interface EventResourcePageProps extends PageProps<"/resources/events/[id]"> {}
 
 export function generateStaticParams(): Array<

@@ -12,6 +12,8 @@ import { client } from "@/lib/content/client";
 import { createGitHubClient } from "@/lib/content/github-client";
 import { getPreviewMode } from "@/lib/content/github-client/get-preview-mode";
 
+export const dynamicParams = false;
+
 interface DocumentationPageProps extends PageProps<"/documentation/[id]"> {}
 
 export function generateStaticParams(): Array<
