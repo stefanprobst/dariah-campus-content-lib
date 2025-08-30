@@ -15,8 +15,6 @@ import { createGitHubClient } from "@/lib/content/github-client";
 import { getPreviewMode } from "@/lib/content/github-client/get-preview-mode";
 import { pickRandom } from "@/lib/utils/pick-random";
 
-export const dynamicParams = false;
-
 interface CurriculumPageProps extends PageProps<"/curricula/[id]"> {}
 
 export function generateStaticParams(): Array<Pick<Awaited<CurriculumPageProps["params"]>, "id">> {

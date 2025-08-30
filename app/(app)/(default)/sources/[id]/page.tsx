@@ -11,8 +11,6 @@ import { client } from "@/lib/content/client";
 import { createGitHubClient } from "@/lib/content/github-client";
 import { getPreviewMode } from "@/lib/content/github-client/get-preview-mode";
 
-export const dynamicParams = false;
-
 interface SourcePageProps extends PageProps<"/sources/[id]"> {}
 
 export function generateStaticParams(): Array<Pick<Awaited<SourcePageProps["params"]>, "id">> {
