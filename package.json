@@ -17,7 +17,7 @@
 	"scripts": {
 		"app:build": "next build",
 		"app:dev": "next dev --turbopack",
-		"build": "run-s content:build generate:metadata-dump app:build",
+		"build": "run-s test:e2e:install content:build generate:metadata-dump app:build",
 		"content:build": "dotenv -c -- tsx --tsconfig ./scripts/tsconfig.json ./scripts/content/generate-content.ts build",
 		"content:dev": "dotenv -c -- tsx --tsconfig ./scripts/tsconfig.json ./scripts/content/generate-content.ts watch",
 		"dev": "concurrently --kill-others --names \"content,app\" --prefix-colors \"auto\" \"pnpm:content:dev\" \"pnpm:app:dev\"",
@@ -41,7 +41,7 @@
 		"test": "exit 0",
 		"test:e2e": "playwright test --config ./config/playwright.config.ts",
 		"test:e2e:codegen": "playwright codegen",
-		"test:e2e:install": "playwright install --with-deps",
+		"test:e2e:install": "playwright install && playwright install-deps",
 		"test:e2e:ui": "pnpm run test:e2e --ui",
 		"test:e2e:update-snapshots": "pnpm run test:e2e --update-snapshots",
 		"types:check": "tsc --noEmit",
