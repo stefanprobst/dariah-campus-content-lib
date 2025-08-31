@@ -32,9 +32,7 @@ export default function NotFoundPage(): ReactNode {
 
 	return (
 		<div className="grid min-h-[calc(100dvh-100px)] place-content-center place-items-center">
-			<PageTitle>
-				{t("title")} ({"not global"})
-			</PageTitle>
+			<PageTitle>{t("title")}</PageTitle>
 		</div>
 	);
 }

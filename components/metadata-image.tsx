@@ -44,6 +44,8 @@ export async function MetadataImage(props: Readonly<MetadataImageProps>): Promis
 						fontSize: 48,
 						textAlign: "center",
 						textWrap: "balance",
+						/** @see https://github.com/vercel/satori/issues/498 */
+						wordBreak: "break-word",
 					}}
 				>
 					{title}

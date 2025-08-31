@@ -39,6 +39,7 @@ export async function getPreviewMode(): Promise<PreviewMode> {
 			}
 		}
 
+		/** This seems to work even though it is not called in a route handler. */
 		draft.disable();
 	}
 
